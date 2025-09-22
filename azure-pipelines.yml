@@ -1,0 +1,7 @@
+trigger: none
+pool: amiteshpool
+stages:
+- stage: TerraformInstall
+  jobs:
+  - job: TerraformInstallJob
+    steps:
