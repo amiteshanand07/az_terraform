@@ -8,3 +8,8 @@ stages:
     - task: TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
+- stage: TFSec
+  jobs:
+  - job: TFSecJob
+    steps:
+
