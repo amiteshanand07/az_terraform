@@ -28,3 +28,13 @@ stages:
         backendAzureRmStorageAccountName: 'pkdgstorage'
         backendAzureRmContainerName: 'pkdgcontainer'
         backendAzureRmKey: 'amitesh.terraform.tfstate'
+- stage: TerraformPlan
+  jobs:
+  - job: TerraformPlanjob
+    steps:
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
+        environmentServiceNameAzureRM: 'amiteshserviceconnection'
