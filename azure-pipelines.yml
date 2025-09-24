@@ -17,7 +17,7 @@ stages:
         version: 'v1.26.0'
 - stage: TerraformInit
   jobs:
-  - job: TerraformInitJob
+  - job: TerraformInitandPlanJob
     steps:
     - task: TerraformTask@5
       inputs:
@@ -28,8 +28,7 @@ stages:
         backendAzureRmStorageAccountName: 'pkdgstorage'
         backendAzureRmContainerName: 'pkdgcontainer'
         backendAzureRmKey: 'amitesh.terraform.tfstate'
-- stage: TerraformPlan
-  jobs:
+
   - job: TerraformPlanjob
     steps:
     - task: TerraformTask@5
